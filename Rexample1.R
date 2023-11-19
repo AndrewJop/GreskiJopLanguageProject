@@ -1,4 +1,7 @@
 #Noah Greski and Andrew Jop
+#Fall 2023
+#R Example 1 Testing File
+#All code is tested in R studio
 
 #testing plots
 plot(1:50)
