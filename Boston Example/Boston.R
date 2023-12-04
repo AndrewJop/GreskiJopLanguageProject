@@ -16,6 +16,9 @@ ggplot(data, aes(x = time, y = tavg)) +
        x = "Date",
        y = "Temperature (°C)")
 
+#HIGHLIGHT UP UNTIL THIS LINE FOR SCATTER PLOT
+#------------------------------------------------------
+
 #converts date into date object
 data$time <- as.Date(data$time, format = "%Y-%m-%d")
 
@@ -30,3 +33,5 @@ ggplot(data, aes(x = year, y = prcp, fill = year)) +
        y = "Total Precipitation (mm)",
        fill = "Year") +
   scale_y_continuous(labels = scales::comma_format()) #better readability with commas
+
+#HIGHLIGHT ALL FOR THE BAR CHART
