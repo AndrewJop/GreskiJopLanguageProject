@@ -6,7 +6,7 @@ install.packages("ggplot2")
 library(ggplot2)
 
 #read in csv file
-data <- read.csv("boston_weather_data.csv")
+data <- read.csv("Boston Example/boston_weather_data.csv")
 data
 
 #creates scatter plot

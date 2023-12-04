@@ -12,7 +12,7 @@ library(dplyr)
 library(maps)
 
 #reads in csv file with Chipotle Locations
-data <- read.csv("chipotle_stores.csv")
+data <- read.csv("Chipotle Example/chipotle_stores.csv")
 
 #creates an sf object with longitude and latitude
 sf_data <- st_as_sf(data, coords = c("longitude", "latitude"), crs = 4326)
