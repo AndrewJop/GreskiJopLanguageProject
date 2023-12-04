@@ -1,0 +1,10 @@
+Instructions on how to run this program
+
+1. All code must be run in RStudio for it to work
+2. Clone repository to your RStudio
+3. Go into the file that you would like to run
+4. Then select (highlight) all the code in the file
+5. Click run at the top of the window where the code it
+6. Click no on any packages that want to be installed on the computer
+7. Now look on the right side you will see your plot under the plots section 
+8. You can click the zoom button to create a separate window to view your plot
