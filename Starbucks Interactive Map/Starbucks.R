@@ -4,21 +4,32 @@
 
 install.packages("leaflet")
 install.packages("dplyr")
+install.packages("sf")
 library(leaflet)
 library(dplyr)
+library(sf)
 
-data <- read.csv("starbucks_locations.csv")
+starbucks_data <- read.csv("Starbucks Interactive Map/starbucks_locations.csv")
 
-starbucks_map <- leaflet(data = starbucks_data) %>%
+starbucks_data <- starbucks_data %>%
+  filter(!is.na(Longitude) & !is.na(Latitude))
+
+starbucks_data <- starbucks_data %>%
+  filter(!is.na(Longitude) & !is.na(Latitude))
+
+
+starbucks_sf <- st_as_sf(starbucks_data, coords = c("Longitude", "Latitude"))
+
+
+starbucks_map_world <- leaflet(data = starbucks_sf ) %>%
   addTiles() %>%
   addMarkers(
-    lng = ~Longitude,
-    lat = ~Latitude,
-    popup = ~paste("<strong>Name:</strong> ", Name, "<br>",
+    clusterOptions = markerClusterOptions(),
+    popup = ~paste("<strong>Name:</strong> ", Brand, "<br>",
                    "<strong>City:</strong> ", City, "<br>",
                    "<strong>Country:</strong> ", Country),
-    label = ~paste(Name)
+    label = ~paste(Brand)
   )
 
 
-starbucks_map
+starbucks_map_world
